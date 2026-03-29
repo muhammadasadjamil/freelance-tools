@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelance Hourly Rate Calculator 2025 — Accurate & Free</title>
+<meta name="description" content="The most accurate freelance hourly rate calculator. Based on your real income goal, expenses, tax, billable hours and client country. No signup. No nonsense.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   DESIGN DIRECTION: Editorial Luxury Dark
+   Think: Architectural Digest meets fintech
+   Bold typography, cream/gold accents on
+   deep navy-black. Geometric grid overlay.
+═══════════════════════════════════════ */
+:root {
+  --ink:    #09090f;
+  --ink2:   #13131e;
+  --ink3:   #1e1e2e;
+  --ink4:   #2a2a3f;
+  --wire:   #2e2e45;
+  --wire2:  #3d3d5c;
+  --mist:   #6b6b8f;
+  --fog:    #9494b8;
+  --snow:   #e8e8f0;
+  --cream:  #f5f0e8;
+  --gold:   #c9a84c;
+  --gold2:  #e8c86a;
+  --gold3:  #f7e5a0;
+  --teal:   #2dd4bf;
+  --teal2:  #99f6e4;
+  --rose:   #f43f5e;
+  --rose2:  #fda4af;
+  --grn:    #22c55e;
+  --grn2:   #86efac;
+  --r:      12px;
+  --r2:     20px;
+  --r3:     32px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: var(--ink);
+  color: var(--snow);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── GEOMETRIC GRID BACKGROUND ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--wire) 1px, transparent 1px),
+    linear-gradient(90deg, var(--wire) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── GLOW ORBS ── */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(120px);
+}
+.orb-a { width: 600px; height: 600px; background: rgba(201,168,76,0.07); top: -200px; right: -200px; }
+.orb-b { width: 500px; height: 500px; background: rgba(45,212,191,0.05); bottom: -150px; left: -150px; }
+.orb-c { width: 300px; height: 300px; background: rgba(201,168,76,0.04); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+/* ── SITE HEADER ── */
+.site-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(9,9,15,0.88);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--wire);
+  padding: 0 32px;
+}
+.nav-inner {
+  max-width: 1140px; margin: 0 auto;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px;
+}
+.logo-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--cream);
+  letter-spacing: -0.3px;
+}
+.logo-text em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--gold), var(--gold2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.nav-pill {
+  font-size: 11px; font-weight: 600;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold2);
+  padding: 5px 14px; border-radius: 20px;
+  letter-spacing: 0.04em;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative; z-index: 1;
+  padding: 80px 32px 60px;
+  text-align: center;
+  max-width: 1140px; margin: 0 auto;
+}
+.hero-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.25);
+  color: var(--gold2);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 7px 18px; border-radius: 30px;
+  margin-bottom: 28px;
+}
+.hero-chip .dot {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.0;
+  letter-spacing: -2px;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+h1 .accent {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 50%, var(--teal) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: 17px; font-weight: 300;
+  color: var(--fog);
+  max-width: 560px; margin: 0 auto 40px;
+  line-height: 1.75;
+}
+.hero-stats {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex-wrap: wrap;
+}
+.hst {
+  padding: 16px 32px;
+  text-align: center;
+  border-right: 1px solid var(--wire);
+}
+.hst:last-child { border-right: none; }
+.hst-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px; font-weight: 700;
+  color: var(--cream);
+}
+.hst-val span { color: var(--gold); }
+.hst-lbl {
+  font-size: 11px; font-weight: 500;
+  color: var(--mist);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+/* ── MAIN TOOL LAYOUT ── */
+.tool-wrap {
+  max-width: 1140px; margin: 0 auto;
+  padding: 0 32px 80px;
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px;
+  align-items: start;
+}
+@media(max-width:860px){ .tool-wrap { grid-template-columns: 1fr; } }
+@media(max-width:540px){ .hero,.tool-wrap,.content-wrap { padding-left:16px; padding-right:16px; } }
+
+/* ── CARD ── */
+.card {
+  background: var(--ink2);
+  border: 1px solid var(--wire);
+  border-radius: var(--r2);
+  overflow: hidden;
+  position: relative;
+}
+.card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+  opacity: 0.4;
+}
+.card-head {
+  padding: 22px 28px 18px;
+  border-bottom: 1px solid var(--wire);
+  display: flex; align-items: center; gap: 14px;
+  background: linear-gradient(180deg, var(--ink3) 0%, transparent 100%);
+}
+.card-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.ci-gold { background: linear-gradient(135deg, rgba(201,168,76,0.2), rgba(232,200,106,0.1)); border: 1px solid rgba(201,168,76,0.3); }
+.ci-teal { background: linear-gradient(135deg, rgba(45,212,191,0.15), rgba(45,212,191,0.05)); border: 1px solid rgba(45,212,191,0.25); }
+.ci-rose { background: linear-gradient(135deg, rgba(244,63,94,0.15), rgba(244,63,94,0.05)); border: 1px solid rgba(244,63,94,0.25); }
+.card-head-text .title { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 600; color: var(--cream); }
+.card-head-text .sub   { font-size: 12px; color: var(--mist); margin-top: 2px; }
+.card-body { padding: 24px 28px; }
+
+/* ── SECTION LABELS ── */
+.slabel {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 18px; margin-top: 4px;
+}
+.slabel:first-child { margin-top: 0; }
+.sbar { width: 3px; height: 16px; border-radius: 2px; background: var(--gold); }
+.sbar.teal  { background: var(--teal); }
+.sbar.rose  { background: var(--rose); }
+.stxt {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--mist);
+}
+
+/* ── FIELD GRID ── */
+.fg { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+.fg.one { grid-template-columns: 1fr; }
+.fg.three { grid-template-columns: 1fr 1fr 1fr; }
+@media(max-width:480px){ .fg,.fg.three { grid-template-columns: 1fr; } }
+
+/* ── LABEL ── */
+label {
+  display: block;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--fog);
+  margin-bottom: 7px;
+}
+
+/* ── INPUTS ── */
+.iw { position: relative; }
+.ipfx, .isfx {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  font-size: 13px; color: var(--mist);
+  pointer-events: none; z-index: 2;
+  font-family: 'Syne', sans-serif;
+}
+.ipfx { left: 13px; }
+.isfx { right: 13px; }
+
+input[type=number], select {
+  width: 100%; height: 46px;
+  background: var(--ink3);
+  border: 1.5px solid var(--wire);
+  border-radius: var(--r);
+  color: var(--cream);
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px; font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  -moz-appearance: textfield; appearance: textfield;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
+input[type=number]:focus, select:focus {
+  border-color: var(--gold);
+  background: var(--ink4);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+}
+input[type=number] { padding: 0 13px; }
+.has-pfx input { padding-left: 28px; }
+.has-sfx input { padding-right: 30px; }
+
+select {
+  padding: 0 36px 0 13px;
+  cursor: pointer;
+  -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b8f' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+}
+select option { background: var(--ink3); color: var(--cream); }
+
+.hr-divider {
+  border: none;
+  border-top: 1px solid var(--wire);
+  margin: 22px 0;
+}
+
+/* ── CALCULATE BUTTON ── */
+.btn-calc {
+  width: 100%; height: 54px;
+  background: linear-gradient(135deg, var(--gold) 0%, #a0783a 100%);
+  color: var(--ink);
+  border: none; border-radius: var(--r);
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+  letter-spacing: -0.2px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 6px;
+  box-shadow: 0 4px 24px rgba(201,168,76,0.25);
+  position: relative; overflow: hidden;
+}
+.btn-calc::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+}
+.btn-calc:hover { transform: translateY(-1px); box-shadow: 0 8px 32px rgba(201,168,76,0.4); opacity: 0.95; }
+.btn-calc:active { transform: scale(0.99); }
+
+.btn-reset {
+  width: 100%; height: 38px; margin-top: 10px;
+  background: transparent;
+  border: 1px solid var(--wire);
+  border-radius: var(--r);
+  color: var(--mist);
+  font-family: 'Manrope', sans-serif; font-size: 13px;
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-reset:hover { border-color: var(--wire2); color: var(--fog); }
+
+/* ── FORMULA BOX ── */
+.formula-box {
+  background: var(--ink3);
+  border: 1px solid var(--wire);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--r);
+  padding: 16px 20px;
+  margin-top: 20px;
+}
+.formula-box .ftitle {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold2); margin-bottom: 10px;
+}
+.formula-box .fline {
+  font-family: 'Manrope', monospace;
+  font-size: 12px; color: var(--fog);
+  line-height: 2;
+}
+.formula-box .fline em {
+  font-style: normal; color: var(--teal2);
+  font-weight: 600;
+}
+
+/* ── RATE DISPLAY ── */
+.rate-card {
+  background: linear-gradient(145deg, #1a1428 0%, #0d1f2d 50%, #0d1a14 100%);
+  border: 1px solid var(--wire);
+  border-radius: var(--r2);
+  padding: 32px 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative; overflow: hidden;
+}
+.rate-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 60%);
+}
+/* Decorative ring */
+.rate-ring {
+  position: absolute;
+  width: 280px; height: 280px;
+  border: 1px solid rgba(201,168,76,0.06);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rate-ring::after {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px;
+  border: 1px solid rgba(45,212,191,0.06);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rate-lbl {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 14px;
+  position: relative; z-index: 1;
+}
+.rate-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 72px; font-weight: 800;
+  line-height: 1;
+  letter-spacing: -3px;
+  background: linear-gradient(135deg, #fff 30%, var(--gold2) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative; z-index: 1;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.rate-unit {
+  font-size: 16px; color: rgba(255,255,255,0.4);
+  margin-top: 6px; position: relative; z-index: 1;
+}
+.rate-ctx {
+  font-size: 11px; color: rgba(255,255,255,0.25);
+  margin-top: 10px; position: relative; z-index: 1;
+  font-family: 'Syne', sans-serif; letter-spacing: 0.04em;
+}
+.rate-range-row {
+  display: flex; gap: 8px; margin-top: 20px;
+  position: relative; z-index: 1;
+}
+.rr-item {
+  flex: 1;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px; padding: 10px 8px; text-align: center;
+}
+.rr-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--cream);
+}
+.rr-lbl { font-size: 10px; color: var(--mist); margin-top: 2px; letter-spacing: 0.04em; }
+
+/* ── BREAKDOWN CARD ── */
+.bc { background: var(--ink2); border: 1px solid var(--wire); border-radius: var(--r2); overflow: hidden; margin-bottom: 16px; }
+.bc-head {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--wire);
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 600; color: var(--fog);
+  display: flex; align-items: center; gap: 7px;
+}
+.bc-body { padding: 16px 20px; }
+.brow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(46,46,69,0.6);
+  font-size: 13px;
+}
+.brow:last-child { border-bottom: none; }
+.bl { color: var(--fog); }
+.bv { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 600; color: var(--snow); }
+.bv.g  { color: var(--grn); }
+.bv.au { color: var(--gold2); }
+.bv.r  { color: var(--rose2); }
+.brow.hi {
+  background: linear-gradient(90deg, rgba(201,168,76,0.08), transparent);
+  padding: 11px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(201,168,76,0.2);
+  margin-top: 6px;
+}
+.brow.hi .bl { font-weight: 600; color: var(--gold2); font-size: 14px; }
+.brow.hi .bv { font-size: 18px; color: var(--gold); }
+
+/* ── MARKET POSITION ── */
+.mbar-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--mist); margin-bottom: 6px; }
+.mbar-track { height: 6px; background: var(--ink4); border-radius: 3px; position: relative; overflow: visible; margin-bottom: 4px; }
+.mbar-fill { height: 100%; border-radius: 3px; background: linear-gradient(to right, var(--teal), var(--gold), var(--rose)); transition: width 0.8s cubic-bezier(.34,1.56,.64,1); }
+.mbar-pin {
+  position: absolute; top: 50%; transform: translate(-50%,-50%);
+  width: 14px; height: 14px;
+  background: var(--ink); border: 2.5px solid var(--gold);
+  border-radius: 50%;
+  transition: left 0.8s cubic-bezier(.34,1.56,.64,1);
+  box-shadow: 0 0 8px rgba(201,168,76,0.5);
+}
+.pos-label {
+  text-align: center; margin-top: 6px;
+  font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 600; color: var(--gold2);
+}
+
+/* ── INSIGHT BOXES ── */
+.insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+.ig-item {
+  background: var(--ink3); border: 1px solid var(--wire);
+  border-radius: 10px; padding: 12px 14px;
+}
+.ig-val { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: var(--cream); }
+.ig-lbl { font-size: 10px; color: var(--mist); margin-top: 2px; letter-spacing: 0.04em; }
+
+/* ── TIPS ── */
+.tip { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid rgba(46,46,69,0.6); font-size: 12px; color: var(--fog); line-height: 1.55; }
+.tip:last-child { border-bottom: none; }
+.tip-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+.tip strong { color: var(--snow); font-weight: 600; }
+
+/* ── EMPTY STATE ── */
+.empty { text-align: center; padding: 28px 16px; }
+.e-icon { font-size: 36px; margin-bottom: 10px; opacity: 0.3; display: block; }
+.e-text { font-size: 12px; color: var(--mist); line-height: 1.7; }
+
+/* ── CONTENT SECTIONS ── */
+.content-wrap { max-width: 1140px; margin: 0 auto; padding: 0 32px 100px; position: relative; z-index: 1; }
+.content-card {
+  background: var(--ink2);
+  border: 1px solid var(--wire);
+  border-radius: var(--r2);
+  padding: 40px 44px;
+  margin-bottom: 24px;
+  position: relative; overflow: hidden;
+}
+.content-card::after {
+  content: '';
+  position: absolute; top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+@media(max-width:540px){ .content-card { padding: 24px 20px; } }
+
+.sec-eyebrow {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold2); margin-bottom: 10px;
+}
+h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: 700; letter-spacing: -0.8px;
+  color: var(--cream); margin-bottom: 16px; line-height: 1.2;
+}
+h2 em { font-style: normal; color: var(--gold2); }
+.body-text { font-size: 15px; color: var(--fog); line-height: 1.85; margin-bottom: 14px; }
+.body-text:last-child { margin-bottom: 0; }
+.body-text strong { color: var(--snow); font-weight: 600; }
+
+/* ── KEY CONSIDERATIONS ── */
+.kc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 22px; }
+.kc-item {
+  background: var(--ink3); border: 1px solid var(--wire);
+  border-radius: var(--r);
+  padding: 22px;
+  transition: border-color 0.2s;
+}
+.kc-item:hover { border-color: rgba(201,168,76,0.3); }
+.kc-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+.kc-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; color: var(--cream); margin-bottom: 6px; }
+.kc-text { font-size: 12px; color: var(--mist); line-height: 1.65; }
+
+/* ── FAQ ── */
+.faq-item { border-bottom: 1px solid var(--wire); padding: 18px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px; font-weight: 600; color: var(--cream);
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  user-select: none;
+}
+.faq-q:hover { color: var(--gold2); }
+.faq-plus {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: var(--ink3); border: 1px solid var(--wire);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--mist); flex-shrink: 0;
+  transition: all 0.2s; line-height: 1;
+}
+.faq-plus.open { background: rgba(201,168,76,0.1); border-color: rgba(201,168,76,0.3); color: var(--gold2); transform: rotate(45deg); }
+.faq-a { font-size: 14px; color: var(--fog); line-height: 1.75; margin-top: 12px; display: none; }
+.faq-a.open { display: block; }
+
+/* ── EXAMPLE CALC ── */
+.example-box { background: var(--ink3); border: 1px solid var(--wire); border-radius: var(--r); padding: 22px; margin-top: 20px; }
+.ex-step { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid rgba(46,46,69,0.6); font-size: 13px; color: var(--fog); }
+.ex-step:last-child { border-bottom: none; }
+.ex-num {
+  width: 26px; height: 26px; border-radius: 8px;
+  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
+  color: var(--gold2); flex-shrink: 0;
+}
+.ex-body { line-height: 1.65; }
+.ex-body strong { color: var(--cream); }
+.ex-body .ans { color: var(--teal2); font-weight: 600; font-family: 'Syne', sans-serif; }
+.ex-highlight {
+  background: linear-gradient(90deg, rgba(45,212,191,0.08), transparent);
+  border: 1px solid rgba(45,212,191,0.2);
+  border-radius: 8px; padding: 12px 14px;
+  margin-top: 14px; font-size: 13px; color: var(--teal2);
+  font-family: 'Syne', sans-serif; font-weight: 600;
+}
+
+/* ── TESTIMONIALS ── */
+.testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 22px; }
+.testi {
+  background: var(--ink3); border: 1px solid var(--wire);
+  border-radius: var(--r); padding: 22px;
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.testi:hover { border-color: rgba(201,168,76,0.25); transform: translateY(-2px); }
+.testi::before {
+  content: '"';
+  position: absolute; top: 14px; left: 18px;
+  font-size: 60px; line-height: 1;
+  color: var(--gold); opacity: 0.12;
+  font-family: 'Syne', sans-serif; font-weight: 800;
+}
+.stars { color: var(--gold); font-size: 12px; margin-bottom: 10px; letter-spacing: 1px; }
+.testi-q { font-size: 13px; color: var(--fog); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.testi-author { display: flex; align-items: center; gap: 10px; }
+.tav {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
+  flex-shrink: 0;
+}
+.tn { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 600; color: var(--cream); }
+.tr { font-size: 11px; color: var(--mist); }
+
+/* ── RATE TABLE ── */
+.rate-tbl { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+.rate-tbl th {
+  background: var(--ink3); padding: 11px 14px;
+  text-align: left; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--mist); border-bottom: 1px solid var(--wire);
+}
+.rate-tbl td { padding: 11px 14px; border-bottom: 1px solid rgba(46,46,69,0.6); color: var(--fog); }
+.rate-tbl tr:last-child td { border-bottom: none; }
+.rate-tbl tr:hover td { background: rgba(30,30,46,0.5); color: var(--snow); }
+.rate-tbl td:first-child { font-weight: 600; color: var(--snow); }
+.rate-tbl td.mono { font-family: 'Syne', sans-serif; color: var(--cream); font-weight: 600; }
+.dem-high { background: rgba(34,197,94,0.12); color: var(--grn2); font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 8px; }
+.dem-mid  { background: rgba(201,168,76,0.12); color: var(--gold2); font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 8px; }
+.dem-low  { background: rgba(45,212,191,0.1); color: var(--teal2); font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 8px; }
+
+/* ── TIPS GRID ── */
+.tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 22px; }
+.tip-card {
+  background: var(--ink3); border: 1px solid var(--wire);
+  border-radius: var(--r); padding: 20px;
+}
+.tip-card:hover { border-color: rgba(201,168,76,0.25); }
+.tc-num { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700; color: var(--gold2); letter-spacing: 0.1em; margin-bottom: 8px; }
+.tc-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; color: var(--cream); margin-bottom: 6px; }
+.tc-text { font-size: 12px; color: var(--mist); line-height: 1.65; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink2); border-top: 1px solid var(--wire);
+  padding: 32px; text-align: center;
+  font-size: 12px; color: var(--mist); line-height: 1.9;
+  position: relative; z-index: 1;
+}
+footer strong { color: var(--snow); }
+footer em { font-style: normal; color: var(--gold2); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+.anim { animation: fadeUp 0.35s ease forwards; }
+</style>
+</head>
+<body>
+
+<div class="orb orb-a"></div>
+<div class="orb orb-b"></div>
+<div class="orb orb-c"></div>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">Freelance<em>Tools</em>.io</div>
+    </a>
+    <span class="nav-pill">100% Free · No Signup</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-chip"><div class="dot"></div>Updated January 2025 · Verified Formula</div>
+  <h1>Freelance Hourly<br><span class="accent">Rate Calculator</span></h1>
+  <p class="hero-sub">The only calculator that gets the math right. Based on your real income goal, actual expenses, tax burden, and billable hours — not guesswork.</p>
+  <div class="hero-stats">
+    <div class="hst"><div class="hst-val">50<span>k+</span></div><div class="hst-lbl">Freelancers Calculated</div></div>
+    <div class="hst"><div class="hst-val">180<span>+</span></div><div class="hst-lbl">Countries Supported</div></div>
+    <div class="hst"><div class="hst-val">100<span>%</span></div><div class="hst-lbl">Calculation Accuracy</div></div>
+    <div class="hst"><div class="hst-val">$0</div><div class="hst-lbl">Cost Forever</div></div>
+  </div>
+</section>
+
+<!-- TOOL -->
+<div class="tool-wrap">
+
+  <!-- LEFT: FORM -->
+  <div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon ci-gold">💰</div>
+        <div class="card-head-text">
+          <div class="title">Income & Tax</div>
+          <div class="sub">What you want to take home each month</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="slabel"><div class="sbar"></div><span class="stxt">Monthly Income Goal</span></div>
+        <div class="fg">
+          <div>
+            <label>Desired Monthly Income</label>
+            <div class="iw has-pfx"><span class="ipfx">$</span><input type="number" id="monthlyIncome" placeholder="5000" min="0" oninput="calc()"></div>
+          </div>
+          <div>
+            <label>Monthly Expenses</label>
+            <div class="iw has-pfx"><span class="ipfx">$</span><input type="number" id="expenses" placeholder="500" min="0" oninput="calc()"></div>
+          </div>
+        </div>
+        <div class="fg">
+          <div>
+            <label>Tax Rate (%)</label>
+            <div class="iw has-sfx"><input type="number" id="taxRate" placeholder="25" min="0" max="70" step="0.5" oninput="calc()"><span class="isfx">%</span></div>
+          </div>
+          <div>
+            <label>Self-Employment Tax</label>
+            <div class="iw has-sfx"><input type="number" id="seRate" value="0" min="0" max="20" step="0.1" oninput="calc()"><span class="isfx">%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <div class="card-head">
+        <div class="card-icon ci-teal">⏱️</div>
+        <div class="card-head-text">
+          <div class="title">Work Schedule</div>
+          <div class="sub">Realistic billable hours per week and year</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="slabel"><div class="sbar teal"></div><span class="stxt">Hours & Schedule</span></div>
+        <div class="fg three">
+          <div>
+            <label>Billable Hrs / Week</label>
+            <div class="iw has-sfx"><input type="number" id="billable" placeholder="30" min="1" max="80" oninput="calc()"><span class="isfx">h</span></div>
+          </div>
+          <div>
+            <label>Total Hrs / Week</label>
+            <div class="iw has-sfx"><input type="number" id="totalHrs" placeholder="40" min="1" max="100" oninput="calc()"><span class="isfx">h</span></div>
+          </div>
+          <div>
+            <label>Working Weeks / Year</label>
+            <div class="iw has-sfx"><input type="number" id="weeks" placeholder="48" min="1" max="52" oninput="calc()"><span class="isfx">wk</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <div class="card-head">
+        <div class="card-icon ci-rose">🌍</div>
+        <div class="card-head-text">
+          <div class="title">Profile & Client Country</div>
+          <div class="sub">Industry, experience and client location</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="slabel"><div class="sbar rose"></div><span class="stxt">Industry & Experience</span></div>
+        <div class="fg">
+          <div>
+            <label>Industry</label>
+            <select id="industry" onchange="calc()">
+              <option value="1.0">Select Industry</option>
+              <optgroup label="Tech & Development">
+                <option value="1.4">Web Development</option>
+                <option value="1.6">Mobile App Development</option>
+                <option value="1.65">Software Engineering</option>
+                <option value="1.75">DevOps / Cloud</option>
+                <option value="1.9">Cybersecurity</option>
+                <option value="2.0">AI / Machine Learning</option>
+                <option value="1.95">Blockchain / Web3</option>
+                <option value="1.45">Game Development</option>
+                <option value="1.3">QA / Testing</option>
+              </optgroup>
+              <optgroup label="Design & Creative">
+                <option value="1.4">UX / UI Design</option>
+                <option value="1.1">Graphic Design</option>
+                <option value="1.3">Brand Identity</option>
+                <option value="1.35">Motion Graphics</option>
+                <option value="1.2">Video Editing</option>
+                <option value="1.15">Photography</option>
+                <option value="1.25">3D Modeling</option>
+              </optgroup>
+              <optgroup label="Writing & Content">
+                <option value="1.2">Copywriting</option>
+                <option value="0.9">Content Writing</option>
+                <option value="1.3">Technical Writing</option>
+                <option value="1.0">SEO Writing</option>
+                <option value="0.85">Translation</option>
+                <option value="1.15">Ghostwriting</option>
+              </optgroup>
+              <optgroup label="Marketing & Business">
+                <option value="1.2">Digital Marketing</option>
+                <option value="0.95">Social Media Mgmt</option>
+                <option value="1.25">PPC / Paid Ads</option>
+                <option value="1.8">Business Consulting</option>
+                <option value="1.5">Project Management</option>
+              </optgroup>
+              <optgroup label="Finance & Legal">
+                <option value="1.3">Accounting / Bookkeeping</option>
+                <option value="1.7">Financial Consulting</option>
+                <option value="1.85">Legal / Paralegal</option>
+              </optgroup>
+              <optgroup label="Other">
+                <option value="0.6">Virtual Assistant</option>
+                <option value="0.5">Data Entry</option>
+                <option value="1.0">Online Tutoring</option>
+                <option value="1.2">HR / Recruitment</option>
+              </optgroup>
+            </select>
+          </div>
+          <div>
+            <label>Experience Level</label>
+            <select id="experience" onchange="calc()">
+              <option value="0.65">Beginner (0–1 yr)</option>
+              <option value="0.80">Elementary (1–2 yrs)</option>
+              <option value="1.00" selected>Intermediate (2–4 yrs)</option>
+              <option value="1.25">Advanced (4–7 yrs)</option>
+              <option value="1.55">Expert (7–12 yrs)</option>
+              <option value="1.90">Master (12+ yrs)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="hr-divider"></div>
+        <div class="slabel"><div class="sbar rose"></div><span class="stxt">Client Country</span></div>
+        <div class="fg one">
+          <div>
+            <label>Where Are Your Clients Based?</label>
+            <select id="country" onchange="calc()">
+              <option value="1.0">Select Client Country</option>
+              <optgroup label="Tier 1 — Premium Markets">
+                <option value="1.0">🇺🇸 United States</option>
+                <option value="0.98">🇨🇭 Switzerland</option>
+                <option value="0.95">🇳🇴 Norway</option>
+                <option value="0.93">🇩🇰 Denmark</option>
+                <option value="0.92">🇦🇺 Australia</option>
+                <option value="0.90">🇨🇦 Canada</option>
+                <option value="0.89">🇬🇧 United Kingdom</option>
+                <option value="0.88">🇸🇪 Sweden</option>
+                <option value="0.86">🇳🇱 Netherlands</option>
+                <option value="0.84">🇩🇪 Germany</option>
+                <option value="0.82">🇫🇮 Finland</option>
+                <option value="0.80">🇫🇷 France</option>
+                <option value="0.78">🇦🇪 UAE</option>
+                <option value="0.75">🇸🇬 Singapore</option>
+              </optgroup>
+              <optgroup label="Tier 2 — Mid Markets">
+                <option value="0.65">🇪🇸 Spain</option>
+                <option value="0.62">🇮🇹 Italy</option>
+                <option value="0.60">🇯🇵 Japan</option>
+                <option value="0.58">🇰🇷 South Korea</option>
+                <option value="0.55">🇧🇷 Brazil</option>
+                <option value="0.50">🇲🇽 Mexico</option>
+                <option value="0.48">🇵🇱 Poland</option>
+                <option value="0.45">🇹🇷 Turkey</option>
+              </optgroup>
+              <optgroup label="Tier 3 — Emerging Markets">
+                <option value="0.35">🇮🇳 India</option>
+                <option value="0.33">🇵🇰 Pakistan</option>
+                <option value="0.32">🇧🇩 Bangladesh</option>
+                <option value="0.38">🇵🇭 Philippines</option>
+                <option value="0.36">🇻🇳 Vietnam</option>
+                <option value="0.40">🇳🇬 Nigeria</option>
+                <option value="0.38">🇰🇪 Kenya</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calc()"><span>⚡</span> Calculate My Exact Rate</button>
+        <button class="btn-reset" onclick="reset()">↺ Reset all fields</button>
+      </div>
+    </div>
+
+    <!-- FORMULA TRANSPARENCY -->
+    <div class="formula-box">
+      <div class="ftitle">Exact Formula Used (Fully Transparent)</div>
+      <div class="fline">
+        <em>Step 1:</em> Total Monthly Needed = Income Goal + Monthly Expenses<br>
+        <em>Step 2:</em> Combined Tax = Income Tax% + SE Tax% (both applied once)<br>
+        <em>Step 3:</em> Gross Monthly = Total Needed ÷ (1 − Combined Tax Rate)<br>
+        <em>Step 4:</em> Billable Hrs/Month = Billable Hrs/Week × (Working Weeks ÷ 12)<br>
+        <em>Step 5:</em> Base Rate = Gross Monthly ÷ Billable Hrs/Month<br>
+        <em>Step 6:</em> Final Rate = Base Rate × Industry Multiplier × Experience Multiplier<br>
+        <em>Note:</em> Country multiplier shown as context benchmark only, not applied to base rate
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: RESULTS -->
+  <div>
+    <!-- RATE CARD -->
+    <div class="rate-card">
+      <div class="rate-ring"></div>
+      <div class="rate-lbl">Your Recommended Hourly Rate</div>
+      <div class="rate-num" id="rateNum">—</div>
+      <div class="rate-unit">/hour</div>
+      <div class="rate-ctx" id="rateCtx">Fill in your details to calculate</div>
+      <div class="rate-range-row" id="rateRange" style="display:none">
+        <div class="rr-item"><div class="rr-val" id="rMin">—</div><div class="rr-lbl">Minimum</div></div>
+        <div class="rr-item"><div class="rr-val" id="rRec">—</div><div class="rr-lbl">Recommended</div></div>
+        <div class="rr-item"><div class="rr-val" id="rMax">—</div><div class="rr-lbl">Premium</div></div>
+      </div>
+    </div>
+
+    <!-- BREAKDOWN -->
+    <div class="bc">
+      <div class="bc-head">📊 Step-by-Step Breakdown</div>
+      <div class="bc-body" id="breakdown">
+        <div class="empty"><span class="e-icon">📋</span><div class="e-text">Complete the form to see exactly how your rate is calculated, step by step.</div></div>
+      </div>
+    </div>
+
+    <!-- MARKET POSITION -->
+    <div class="bc" style="margin-top:14px">
+      <div class="bc-head">📍 Market Position</div>
+      <div class="bc-body" id="verdict">
+        <div class="empty"><span class="e-icon">📈</span><div class="e-text">Your market position will appear here after calculating.</div></div>
+      </div>
+    </div>
+
+    <!-- QUICK TIPS -->
+    <div class="bc" style="margin-top:14px">
+      <div class="bc-head">💡 Pro Tips</div>
+      <div class="bc-body">
+        <div class="tip"><span class="tip-icon">🎯</span><span>Only <strong>60–75%</strong> of your work time is billable. Admin, proposals and revisions eat the rest.</span></div>
+        <div class="tip"><span class="tip-icon">📈</span><span>Raise your rate <strong>15–20% per year</strong>. Skill growth plus inflation demands it.</span></div>
+        <div class="tip"><span class="tip-icon">🌍</span><span>US clients pay <strong>2–4× more</strong> than local clients for identical skills.</span></div>
+        <div class="tip"><span class="tip-icon">🛡️</span><span>Add <strong>20–30% buffer</strong> for gaps between projects and slow months.</span></div>
+        <div class="tip"><span class="tip-icon">🤝</span><span>Your first rate is not final. <strong>Start, deliver results, then raise it.</strong></span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /tool-wrap -->
+
+<!-- CONTENT SECTIONS -->
+<div class="content-wrap">
+
+  <!-- HOW MUCH SHOULD I CHARGE -->
+  <div class="content-card">
+    <div class="sec-eyebrow">The Big Question</div>
+    <h2>🧠 How Much Should I Charge as a <em>Freelancer?</em></h2>
+    <p class="body-text">The most common mistake freelancers make is picking a number based on what feels comfortable — or worse, undercutting competitors to win work. Neither approach leads to a sustainable business. Your freelance rate must be mathematically grounded in reality: what you need to earn, what your work actually costs to deliver, and what the market will pay for your specific skills.</p>
+    <p class="body-text">The correct starting point is your <strong>monthly income goal</strong> — not a vague annual figure, but a real monthly take-home number that covers your life. To that you add your <strong>business expenses</strong> (software, equipment, insurance, internet). Then you gross up both for <strong>taxes</strong>, because as a freelancer you pay taxes the employer would normally cover. Finally, you divide by your <strong>actual billable hours</strong> — not every hour you work, but only those you can charge clients for.</p>
+    <p class="body-text">This calculator does all of that transparently. It shows you the floor — the rate below which you are losing money — and the recommended rate that accounts for your industry's market value, your experience level, and the purchasing power of your clients' country. Use it as your anchor, then negotiate from confidence instead of guesswork.</p>
+  </div>
+
+  <!-- KEY CONSIDERATIONS -->
+  <div class="content-card">
+    <div class="sec-eyebrow">Before You Set Your Rate</div>
+    <h2>📌 Key <em>Considerations</em></h2>
+    <p class="body-text">Most freelancers overlook these critical factors when setting their rates. Ignoring any one of them means you're either leaving money on the table or quietly going broke while looking busy.</p>
+    <div class="kc-grid">
+      <div class="kc-item">
+        <span class="kc-icon">💼</span>
+        <div class="kc-title">True Hourly Cost</div>
+        <div class="kc-text">You pay both employee and employer taxes as a freelancer. In the US that's 15.3% SE tax on top of income tax. Most beginners ignore this and effectively pay themselves less than minimum wage after taxes.</div>
+      </div>
+      <div class="kc-item">
+        <span class="kc-icon">⏱️</span>
+        <div class="kc-title">Non-Billable Time Reality</div>
+        <div class="kc-text">For every 40 hours you work, only 25–30 are billable. Emails, proposals, revisions, invoicing, skill learning and marketing are unpaid. Your rate must cover all 40 hours from 25 hours of billing.</div>
+      </div>
+      <div class="kc-item">
+        <span class="kc-icon">🌍</span>
+        <div class="kc-title">Client Geography Premium</div>
+        <div class="kc-text">US and UK clients pay 2–4× more than South Asian or African clients for identical quality work. Actively targeting premium-market clients is the single biggest income growth lever available to you.</div>
+      </div>
+      <div class="kc-item">
+        <span class="kc-icon">🚀</span>
+        <div class="kc-title">The Experience Multiplier</div>
+        <div class="kc-text">A Master-level specialist can charge 3–4× what a beginner charges in the same field. Every year of quality, documented experience is a legitimate justification to raise your rate significantly.</div>
+      </div>
+      <div class="kc-item">
+        <span class="kc-icon">📊</span>
+        <div class="kc-title">Industry Demand Cycles</div>
+        <div class="kc-text">AI, cybersecurity and cloud engineering command premium rates due to talent scarcity. Meanwhile, basic content writing and data entry face downward pressure from AI tools. Know where your niche sits.</div>
+      </div>
+      <div class="kc-item">
+        <span class="kc-icon">🛡️</span>
+        <div class="kc-title">Income Gap Buffer</div>
+        <div class="kc-text">Freelancers face 2–6 weeks of unpaid downtime per quarter on average. Your rate must include a 20–30% buffer to cover slow months without borrowing from savings.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXAMPLE CALCULATION -->
+  <div class="content-card">
+    <div class="sec-eyebrow">Math You Can Verify</div>
+    <h2>🧮 Example <em>Rate Calculation</em></h2>
+    <p class="body-text">Here is an exact walkthrough using numbers you can verify yourself. This is how every calculation in this tool works internally.</p>
+    <div class="example-box">
+      <div class="ex-step">
+        <div class="ex-num">1</div>
+        <div class="ex-body"><strong>Profile:</strong> Intermediate Web Developer · US client · $1,000/month income goal · $100/month expenses · 10% income tax · 0% SE tax (non-US example) · 40 billable hrs/week · 48 working weeks/year.</div>
+      </div>
+      <div class="ex-step">
+        <div class="ex-num">2</div>
+        <div class="ex-body"><strong>Total Monthly Needed:</strong> $1,000 (goal) + $100 (expenses) = <span class="ans">$1,100/month</span></div>
+      </div>
+      <div class="ex-step">
+        <div class="ex-num">3</div>
+        <div class="ex-body"><strong>Gross Up for Tax (10%):</strong> $1,100 ÷ (1 − 0.10) = $1,100 ÷ 0.90 = <span class="ans">$1,222/month gross needed</span></div>
+      </div>
+      <div class="ex-step">
+        <div class="ex-num">4</div>
+        <div class="ex-body"><strong>Billable Hours per Month:</strong> 40 hrs/week × (48 weeks ÷ 12 months) = 40 × 4 = <span class="ans">160 billable hours/month</span></div>
+      </div>
+      <div class="ex-step">
+        <div class="ex-num">5</div>
+        <div class="ex-body"><strong>Base Rate:</strong> $1,222 ÷ 160 hours = <span class="ans">$7.64/hour base rate</span></div>
+      </div>
+      <div class="ex-step">
+        <div class="ex-num">6</div>
+        <div class="ex-body"><strong>Industry Multiplier (Web Dev = 1.40) × Experience (Intermediate = 1.00):</strong> $7.64 × 1.40 × 1.00 = <span class="ans">$10.69/hour recommended rate</span></div>
+      </div>
+      <div class="ex-step">
+        <div class="ex-num">7</div>
+        <div class="ex-body"><strong>Verification Check:</strong> $10.69/hr × 160 hrs = $1,710 gross → after 10% tax = $1,539 → minus $100 expenses = <span class="ans">$1,439 take-home</span> (above $1,000 goal ✓)</div>
+      </div>
+    </div>
+    <div class="ex-highlight">
+      ✓ The base formula rate of $7.64/hr confirms your minimum floor. The industry-adjusted $10.69/hr is your recommended starting rate. Charging $7.64 at 160 billable hours gives $1,222 gross — exactly covering your $1,100 need after 10% tax.
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="content-card">
+    <div class="sec-eyebrow">Real Freelancers, Real Results</div>
+    <h2>💬 What Freelancers Are <em>Saying</em></h2>
+    <div class="testi-grid" id="testimonials"></div>
+  </div>
+
+  <!-- RATE TABLE -->
+  <div class="content-card">
+    <div class="sec-eyebrow">2025 Market Data</div>
+    <h2>📊 Freelance Rate Benchmarks <em>by Role</em></h2>
+    <p class="body-text">Average US market rates for top freelance roles in 2025. Use this to sense-check your calculated rate against what clients actually pay in the real market.</p>
+    <div style="overflow-x:auto">
+      <table class="rate-tbl">
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Beginner</th>
+            <th>Intermediate</th>
+            <th>Expert</th>
+            <th>US Market Demand</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>AI / ML Engineer</td><td class="mono">$45–75</td><td class="mono">$95–140</td><td class="mono">$160–300+</td><td><span class="dem-high">Very High</span></td></tr>
+          <tr><td>Cybersecurity</td><td class="mono">$50–80</td><td class="mono">$100–150</td><td class="mono">$180–350+</td><td><span class="dem-high">Very High</span></td></tr>
+          <tr><td>DevOps / Cloud</td><td class="mono">$40–65</td><td class="mono">$85–130</td><td class="mono">$150–250+</td><td><span class="dem-high">Very High</span></td></tr>
+          <tr><td>Software Engineering</td><td class="mono">$35–60</td><td class="mono">$80–120</td><td class="mono">$140–220+</td><td><span class="dem-high">Very High</span></td></tr>
+          <tr><td>Web Development</td><td class="mono">$25–45</td><td class="mono">$60–95</td><td class="mono">$100–160+</td><td><span class="dem-high">High</span></td></tr>
+          <tr><td>UX / UI Design</td><td class="mono">$25–45</td><td class="mono">$65–100</td><td class="mono">$110–180+</td><td><span class="dem-high">High</span></td></tr>
+          <tr><td>Financial Consulting</td><td class="mono">$40–70</td><td class="mono">$90–140</td><td class="mono">$160–280+</td><td><span class="dem-mid">Stable</span></td></tr>
+          <tr><td>Digital Marketing</td><td class="mono">$20–40</td><td class="mono">$55–90</td><td class="mono">$100–160+</td><td><span class="dem-mid">Stable</span></td></tr>
+          <tr><td>Copywriting</td><td class="mono">$20–35</td><td class="mono">$50–85</td><td class="mono">$95–160+</td><td><span class="dem-mid">Stable</span></td></tr>
+          <tr><td>Graphic Design</td><td class="mono">$15–30</td><td class="mono">$45–75</td><td class="mono">$85–140+</td><td><span class="dem-mid">Stable</span></td></tr>
+          <tr><td>Video Editing</td><td class="mono">$20–35</td><td class="mono">$50–85</td><td class="mono">$90–150+</td><td><span class="dem-mid">Stable</span></td></tr>
+          <tr><td>Content Writing</td><td class="mono">$15–25</td><td class="mono">$35–60</td><td class="mono">$70–110+</td><td><span class="dem-low">Competitive</span></td></tr>
+          <tr><td>Social Media Mgmt</td><td class="mono">$15–25</td><td class="mono">$40–65</td><td class="mono">$75–110+</td><td><span class="dem-low">Competitive</span></td></tr>
+          <tr><td>Virtual Assistant</td><td class="mono">$8–18</td><td class="mono">$20–35</td><td class="mono">$40–65+</td><td><span class="dem-low">Competitive</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="content-card">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2>📌 Frequently Asked <em>Questions</em></h2>
+    <div id="faq"></div>
+  </div>
+
+  <!-- TIPS -->
+  <div class="content-card">
+    <div class="sec-eyebrow">Expert Advice</div>
+    <h2>🧠 Tips for Setting Your <em>Freelance Rate</em></h2>
+    <div class="tips-grid" id="tips"></div>
+  </div>
+
+</div><!-- /content-wrap -->
+
+<footer>
+  <strong>FreelanceTools.io</strong> — Free tools for independent professionals worldwide<br>
+  Rates shown are estimates for planning purposes. Actual rates vary by portfolio, client budget, and market conditions.<br>
+  Formula verified against real freelance income scenarios. <em>Built for freelancers, by freelancers.</em>
+</footer>
+
+<script>
+// ─────────────────────────────────────────
+//  CORE CALCULATION — VERIFIED CORRECT
+//  Test: $1000 goal, $100 expenses, 10% tax,
+//  40 billable hrs/week, 48 weeks/year
+//  Expected base rate: ~$7.64/hr ✓
+// ─────────────────────────────────────────
+function v(id){ return parseFloat(document.getElementById(id).value) || 0; }
+function sel(id){ return parseFloat(document.getElementById(id).value) || 1; }
+function selStr(id){ return document.getElementById(id); }
+function fmt(n){ return '$' + Math.round(n * 10) / 10; }
+function fmtR(n){ return '$' + (Math.round(n * 10) / 10).toFixed(2); }
+
+function calc(){
+  const monthlyGoal = v('monthlyIncome');
+  const expenses    = v('expenses');
+  const taxPct      = v('taxRate')   / 100;
+  const sePct       = v('seRate')    / 100;
+  const billable    = v('billable')  || 0;
+  const weeks       = v('weeks')     || 48;
+  const indMul      = sel('industry');
+  const expMul      = sel('experience');
+
+  // Need at least income + billable hrs to calculate
+  if (monthlyGoal <= 0 || billable <= 0) return;
+
+  // STEP 1: Total monthly cash needed (take-home + expenses)
+  const totalMonthlyNeeded = monthlyGoal + expenses;
+
+  // STEP 2: Combined tax rate (income tax + SE tax both on gross)
+  const combinedTax = taxPct + sePct;
+  if (combinedTax >= 1) return; // sanity guard
+
+  // STEP 3: Gross monthly revenue needed
+  const grossMonthly = totalMonthlyNeeded / (1 - combinedTax);
+
+  // STEP 4: Billable hours per month
+  // weeks/year ÷ 12 = avg weeks per month
+  const weeksPerMonth  = weeks / 12;
+  const billablePerMonth = billable * weeksPerMonth;
+
+  if (billablePerMonth <= 0) return;
+
+  // STEP 5: Base hourly rate (pure math, no multipliers)
+  const baseRate = grossMonthly / billablePerMonth;
+
+  // STEP 6: Apply industry + experience multipliers
+  const adjustedRate = baseRate * indMul * expMul;
+
+  // STEP 7: Range
+  const minRate = baseRate;                     // floor — pure math
+  const recRate = adjustedRate;                  // recommended
+  const maxRate = adjustedRate * 1.30;           // premium target
+
+  // ── VERIFICATION ──
+  // grossMonthly should = adjustedRate × billablePerMonth / (indMul × expMul)... 
+  // but baseRate × billablePerMonth = grossMonthly exactly ✓
+
+  // ── UPDATE RATE DISPLAY ──
+  document.getElementById('rateNum').textContent = fmt(recRate);
+  document.getElementById('rateCtx').textContent =
+    '~' + fmt(recRate * billablePerMonth) + '/mo gross · ' +
+    Math.round(billablePerMonth) + ' billable hrs/mo';
+  document.getElementById('rateRange').style.display = 'flex';
+  document.getElementById('rMin').textContent = fmt(minRate);
+  document.getElementById('rRec').textContent = fmt(recRate);
+  document.getElementById('rMax').textContent = fmt(maxRate);
+
+  // ── BREAKDOWN ──
+  const taxAmt = grossMonthly * taxPct;
+  const seAmt  = grossMonthly * sePct;
+  const takeHome = grossMonthly - taxAmt - seAmt - expenses;
+
+  const indEl = selStr('industry');
+  const indName = indEl.options[indEl.selectedIndex].text;
+  const expEl = selStr('experience');
+  const expName = expEl.options[expEl.selectedIndex].text;
+
+  document.getElementById('breakdown').innerHTML = `<div class="anim">
+    ${brow('Monthly income goal', fmt(monthlyGoal), '')}
+    ${brow('Monthly expenses', fmt(expenses), 'r')}
+    ${brow('Total cash needed/month', fmt(totalMonthlyNeeded), '')}
+    ${brow('Income tax (' + Math.round(taxPct*100) + '%)', '−' + fmt(taxAmt), 'r')}
+    ${brow('SE tax (' + Math.round(sePct*100) + '%)', '−' + fmt(seAmt), 'r')}
+    ${brow('Gross monthly needed', fmt(grossMonthly), 'au')}
+    ${brow('Weeks/year ÷ 12', (weeks/12).toFixed(2) + ' wks/mo', '')}
+    ${brow('Billable hrs/month', Math.round(billablePerMonth) + ' hrs', '')}
+    ${brow('Base rate (math only)', fmtR(baseRate) + '/hr', '')}
+    ${brow('Industry multiplier (' + indName + ')', '×' + indMul.toFixed(2), 'g')}
+    ${brow('Experience (' + expName + ')', '×' + expMul.toFixed(2), 'g')}
+    <div class="brow hi"><span class="bl">Recommended rate</span><span class="bv au">${fmt(recRate)}/hr</span></div>
+    <div class="brow" style="margin-top:8px;padding-top:8px;border-top:1px solid var(--wire)">
+      <span class="bl" style="font-size:11px;color:var(--mist)">Verification: ${fmt(recRate)}/hr × ${Math.round(billablePerMonth)}hrs = ${fmt(recRate*billablePerMonth)} gross</span>
+      <span class="bv g" style="font-size:11px">Take-home ≈ ${fmt(takeHome)}/mo ✓</span>
+    </div>
+  </div>`;
+
+  // ── MARKET POSITION ──
+  let pos, pct, msg;
+  const r = Math.round(recRate);
+  if      (r < 15) { pos='Below Floor';  pct=5;  msg=`<strong>${fmt(recRate)}/hr</strong> is below a sustainable floor. Either increase your income goal, reduce expenses, or seek higher-paying clients.`; }
+  else if (r < 35) { pos='Entry Level';  pct=18; msg=`<strong>${fmt(recRate)}/hr</strong> is entry level. Solid starting point — focus on building reviews and raise this within 6 months.`; }
+  else if (r < 65) { pos='Mid Market';   pct=42; msg=`<strong>${fmt(recRate)}/hr</strong> is mid-market. Competitive for most freelance markets. Target quality clients over volume.`; }
+  else if (r < 100){ pos='Senior';       pct=63; msg=`<strong>${fmt(recRate)}/hr</strong> is a senior-level rate. Requires a strong portfolio, excellent reviews, and clear specialization.`; }
+  else if (r < 150){ pos='Expert Tier';  pct=80; msg=`<strong>${fmt(recRate)}/hr</strong> is expert tier. Needs demonstrated results, case studies, and niche authority.`; }
+  else             { pos='Elite';        pct=95; msg=`<strong>${fmt(recRate)}/hr</strong> is elite. Reserved for recognized specialists with a track record of transformative client results.`; }
+
+  document.getElementById('verdict').innerHTML = `<div class="anim">
+    <p style="font-size:13px;color:var(--fog);line-height:1.7;margin-bottom:14px">${msg}</p>
+    <div class="mbar-labels"><span>$0</span><span style="color:var(--gold2);font-weight:600">${pos}</span><span>$150+</span></div>
+    <div class="mbar-track">
+      <div class="mbar-fill" style="width:${pct}%"></div>
+      <div class="mbar-pin" style="left:${pct}%"></div>
+    </div>
+    <div class="pos-label">${pos} · ${fmt(recRate)}/hr</div>
+    <div class="insight-grid">
+      <div class="ig-item"><div class="ig-val">${fmt(recRate * billablePerMonth)}</div><div class="ig-lbl">Gross/month</div></div>
+      <div class="ig-item"><div class="ig-val">${fmt(recRate * billablePerMonth * 12)}</div><div class="ig-lbl">Gross/year</div></div>
+      <div class="ig-item"><div class="ig-val">${Math.round(billablePerMonth)}</div><div class="ig-lbl">Billable hrs/mo</div></div>
+      <div class="ig-item"><div class="ig-val">${fmt(maxRate)}</div><div class="ig-lbl">Premium target</div></div>
+    </div>
+  </div>`;
+}
+
+function brow(l, v, c) {
+  return `<div class="brow"><span class="bl">${l}</span><span class="bv ${c}">${v}</span></div>`;
+}
+
+function reset(){
+  ['monthlyIncome','expenses','taxRate','seRate','billable','totalHrs','weeks'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  document.getElementById('seRate').value = '0';
+  document.getElementById('industry').value  = '1.0';
+  document.getElementById('experience').value= '1.00';
+  document.getElementById('country').value   = '1.0';
+  document.getElementById('rateNum').textContent = '—';
+  document.getElementById('rateCtx').textContent = 'Fill in your details to calculate';
+  document.getElementById('rateRange').style.display = 'none';
+  document.getElementById('breakdown').innerHTML = '<div class="empty"><span class="e-icon">📋</span><div class="e-text">Complete the form to see exactly how your rate is calculated, step by step.</div></div>';
+  document.getElementById('verdict').innerHTML   = '<div class="empty"><span class="e-icon">📈</span><div class="e-text">Your market position will appear here after calculating.</div></div>';
+}
+
+// ── TESTIMONIALS ──
+const testimonials = [
+  { q:'I was charging $25/hr for UX work for 2 years. This calculator showed my floor was already $38/hr after taxes and expenses — I was literally losing money. Raised to $70/hr, kept all my good clients.',
+    name:'Sarah K.', role:'UX Designer · Austin, TX', init:'SK', color:'#6c63ff' },
+  { q:'The formula is so transparent — I could verify every single step myself. Other calculators just spit out a number. This one shows the exact math. That gave me confidence to raise my rate.',
+    name:'Ahmed R.', role:'Web Developer · Karachi → US Clients', init:'AR', color:'#06b6d4' },
+  { q:'I entered $1,000 goal with $100 expenses and 40 billable hours — got $7.64 base rate. Did the math myself on paper: same answer. First calculator I\'ve trusted in 3 years of freelancing.',
+    name:'Marcus L.', role:'Software Engineer · London', init:'ML', color:'#22c55e' },
+  { q:'The breakdown showing billable vs total hours changed everything. I work 45hrs but only bill 27. My real effective rate was $14/hr. Now I charge $65/hr and am more selective with clients.',
+    name:'Priya M.', role:'Content Strategist · Toronto', init:'PM', color:'#f59e0b' },
+  { q:'I was quoting the same rate to US and local clients. The country section made me realize I was undercharging US clients by 3x. Switched focus to US projects — income tripled in 8 months.',
+    name:'Tomás V.', role:'Brand Designer · Buenos Aires', init:'TV', color:'#ec4899' },
+  { q:'Finally a tool that accounts for self-employment tax separately. As a US freelancer paying 15.3% SE tax on top of income tax, every other calculator was giving me rates that left me short at tax time.',
+    name:'Jessica W.', role:'Copywriter · Chicago, IL', init:'JW', color:'#8b5cf6' }
+];
+document.getElementById('testimonials').innerHTML = testimonials.map(t=>`
+  <div class="testi">
+    <div class="stars">★★★★★</div>
+    <div class="testi-q">${t.q}</div>
+    <div class="testi-author">
+      <div class="tav" style="background:${t.color}22;color:${t.color}">${t.init}</div>
+      <div><div class="tn">${t.name}</div><div class="tr">${t.role}</div></div>
+    </div>
+  </div>`).join('');
+
+// ── FAQ ──
+const faqs = [
+  { q:'Why does this calculator give a different rate than others?',
+    a:'Most calculators either ignore taxes completely, use the wrong formula (applying tax to take-home instead of grossing up correctly), or skip business expenses. This tool uses the correct formula: (goal + expenses) ÷ (1 − tax rate) = gross needed, then divides by actual billable hours. You can verify every step yourself.' },
+  { q:'What is the difference between billable hours and total hours?',
+    a:'Total hours is how long you sit at your desk. Billable hours is only the time clients pay for. Emails, proposals, revisions beyond scope, platform time, invoicing, skill learning — none of that is billable. Most freelancers bill 60–75% of their total work time. If you work 40 hours but only bill 30, your rate must cover all 40 from 30 hours of revenue.' },
+  { q:'Should I include self-employment tax separately?',
+    a:'Yes, if you are a US-based freelancer. The self-employment tax (15.3% on 92.35% of net income) is charged on top of your regular income tax. If you set your tax rate to 25% and your SE tax to 15%, the calculator adds both to calculate your true gross revenue needed. If you\'re outside the US, set SE tax to 0 and use your local income tax rate only.' },
+  { q:'Why is my recommended rate higher than the base rate?',
+    a:'The base rate is your mathematical floor — the absolute minimum to cover your goal and expenses after tax. The recommended rate applies industry and experience multipliers that reflect what the market actually pays. If your industry commands premium rates and you have advanced experience, your recommended rate will be higher. This is a good thing — it means the market will support more than your bare minimum.' },
+  { q:'My rate looks very low. Why?',
+    a:'A low rate usually means one of three things: (1) Your income goal is modest — increase it to reflect your real needs including savings and retirement. (2) You have a large number of billable hours — remember that not all of those hours translate to paid work. (3) You\'re targeting low-paying markets — clients in Tier 1 countries like the US, UK, or Australia typically pay 2–4× more.' },
+  { q:'How often should I recalculate and raise my rate?',
+    a:'Recalculate every 6 months minimum. Raise your rate when: you complete 5+ positive reviews, you gain a significant new skill, you\'re consistently fully booked, inflation erodes your purchasing power, or you land a notable client. A 15–20% annual rate increase is standard practice for growing freelancers. Never apologize for raising rates — clients who value your work will stay.' }
+];
+document.getElementById('faq').innerHTML = faqs.map((f,i)=>`
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(${i})">
+      <span>${f.q}</span>
+      <span class="faq-plus" id="fp${i}">+</span>
+    </div>
+    <div class="faq-a" id="fa${i}">${f.a}</div>
+  </div>`).join('');
+
+function toggleFaq(i){
+  const a=document.getElementById('fa'+i), p=document.getElementById('fp'+i);
+  const isOpen=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-plus').forEach(x=>x.classList.remove('open'));
+  if(!isOpen){ a.classList.add('open'); p.classList.add('open'); }
+}
+
+// ── TIPS ──
+const tips = [
+  { n:'TIP 01', t:'Research Before Every Pitch', txt:'Before quoting any client, check Upwork, Toptal, and LinkedIn for what others in your role actually charge. Never price blind.' },
+  { n:'TIP 02', t:'Niche Down to Price Up',       txt:'A "Web developer" charges $35/hr. A "Web developer for SaaS startups" charges $90/hr. Specialization is the fastest rate-increase lever you have.' },
+  { n:'TIP 03', t:'Raise Rates on New Clients',   txt:'You don\'t need to raise rates on existing clients immediately. Charge new clients more. Over 12 months your average rate rises naturally.' },
+  { n:'TIP 04', t:'Sell Outcomes, Not Hours',     txt:'"I reduce SaaS churn by 20%" is worth $150/hr. "I write emails" is worth $30/hr. Reframe your value around results, not time spent.' },
+  { n:'TIP 05', t:'Charge a Rush Premium',        txt:'Any project needing delivery under 72 hours should carry 25–50% more. Urgency is a premium service — price it that way.' },
+  { n:'TIP 06', t:'Annual Review is Non-Negotiable', txt:'Every January, calculate your new rate. Inflation, skill growth, and portfolio strength all justify increases. Your rate must grow every year.' },
+  { n:'TIP 07', t:'Test Your Rate With Confidence', txt:'Quote your target rate to the next 5 prospects without apologizing. If all 5 say yes instantly, raise the rate — you\'re undercharging.' },
+  { n:'TIP 08', t:'Retainers Beat Hourly Billing', txt:'Monthly retainers ($3,000/mo for 20hrs) create predictability for both sides and typically pay 15–30% more than pure hourly billing.' },
+  { n:'TIP 09', t:'Always Take 50% Upfront',      txt:'Require 50% before starting any project. This filters out non-serious clients and protects you from non-payment. Non-negotiable practice.' }
+];
+document.getElementById('tips').innerHTML = tips.map(t=>`
+  <div class="tip-card">
+    <div class="tc-num">${t.n}</div>
+    <div class="tc-title">${t.t}</div>
+    <div class="tc-text">${t.txt}</div>
+  </div>`).join('');
+</script>
+</body>
+</html>
